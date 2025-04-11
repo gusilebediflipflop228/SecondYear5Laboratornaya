@@ -1,14 +1,16 @@
 package classes;
 
+import interfaces.IMatrix;
+
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Matrix {
+public class Matrix implements IMatrix {
     private final int size;
     private double[] simplearr;
 
     private boolean actualDeterminant = false;
-    private double Determinant = 1;
+    private double Determinant = 0;
 
     public Matrix(int size) {// конструктор при условии, что положительной размерность массива
         this.size = size;
@@ -18,15 +20,10 @@ public class Matrix {
     }
 
     public void setArray(double[] array) {
-//        for(int i=0; i<size;i++ )
-//        {
-//            for (int j=0; j<size;j++){
-//                setIJ(i, j, elem);
-//            }
-//        }
         simplearr = array;
     }
 
+    @Override
     public double getElem(int i, int j) {
         if (i >= 0 && i < size && j >= 0 && j < size) {
             return simplearr[i * size + j];
@@ -34,12 +31,14 @@ public class Matrix {
 
     }
 
+    @Override
     public void setElem(int i, int j, double newElement) {
         if (i >= 0 && i < size && j >= 0 && j < size) {
             simplearr[i * size + j] = newElement;
             actualDeterminant = false;
         }
     }
+
 
     static void swap(double arr[], int size, int i1, int i2, int j1, int j2) {
         double bufer = arr[i1 * size + j1];
@@ -51,6 +50,7 @@ public class Matrix {
         return size;
     }
 
+    @Override
     public double getDeterminant() {
         if (!actualDeterminant) {
             actualDeterminant = true;

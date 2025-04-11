@@ -10,7 +10,7 @@ public class MatrixTest {
     Matrix matrix4 = new Matrix(4);
 
     @Before
-    public void setUp() throws Exception{
+    public void setUp() {
         matrix1.setArray( new double []{1,2,3,
                 3,3,3,
                 6,7,8}
@@ -21,7 +21,7 @@ public class MatrixTest {
 
     @Test
     public void getElem(){
-        Assert.assertEquals(3,matrix1.getElem(1,0),000.1);
+        Assert.assertEquals(3,matrix1.getElem(1,0),0.0000000000000000000000000000000000000000000000000000000000000000000000000001);
     }
 
     @Test

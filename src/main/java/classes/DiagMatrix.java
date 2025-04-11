@@ -13,11 +13,9 @@ public class DiagMatrix extends Matrix {
 
     @Override
     public void setElem(int i, int j, double newElement) {
-        if (i == j)
-        {
+        if (i == j) {
             super.setElem(i, j, newElement);
-        }
-        else {
+        } else {
             throw new IndexOutOfBoundsException("You are trying to set an element up or down the main diagonal");
         }
     }

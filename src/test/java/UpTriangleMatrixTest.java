@@ -36,7 +36,7 @@ public class UpTriangleMatrixTest {
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testIdexOutOfBounds()
+    public void testIndexOutOfBounds()
     {
         utm1.setElem(3,1,1);
     }

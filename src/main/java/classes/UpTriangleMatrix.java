@@ -12,21 +12,16 @@ public class UpTriangleMatrix extends Matrix {
     }
 
     @Override
-    public void setElem(int i, int j,double newElement)
-    {
-        if (j>=i)
-        {
-            super.setElem(i ,j, newElement);
-        }
-        else
-        {
+    public void setElem(int i, int j, double newElement) {
+        if (j >= i) {
+            super.setElem(i, j, newElement);
+        } else {
             throw new IndexOutOfBoundsException("You are trying to set an element below the main diagonal");
         }
     }
 
     @Override
-    public double getDeterminant()
-    {
+    public double getDeterminant() {
         return super.getDeterminant();
     }
 
